@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 117018976}
   m_Layer: 0
   m_Name: building
-  m_TagString: Untagged
+  m_TagString: EnemyCastle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -310,7 +310,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117018974}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 220252944}
   m_Layer: 0
   m_Name: ' building'
-  m_TagString: Untagged
+  m_TagString: PlayerCastle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -632,7 +632,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220252942}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1183,8 +1183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591857865a46d4366b4b0378017dc454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 6637715468352526277, guid: 8cc4230d04e9c4b18a455538cb551891, type: 3}
-  poolSize: 10
 --- !u!1 &843639567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,17 +1308,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b83fbc1400b624386a85475c077eb0fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d9dbfa0070974a2ca34dca77ca2c716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 10262786}
-  distance: 50
-  minDistance: 40
-  maxDistance: 100
-  rotationSpeed: 120
-  zoomSpeed: 4
-  yMinLimit: -20
-  yMaxLimit: 80
+  rotationSpeed: 50
+  movementSpeed: 20
+  zoomSpeed: 10
+  minDistance: 5
+  maxDistance: 50
 --- !u!1 &973447740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,6 +1326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 973447741}
+  - component: {fileID: 973447743}
   - component: {fileID: 973447742}
   m_Layer: 0
   m_Name: Castle2
@@ -1369,20 +1366,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 973447740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a26dd975410714c4f89d9c274378030b, type: 3}
+  m_Script: {fileID: 11500000, guid: cf9890c3afc774de1bae5b82725b44db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  street1: {fileID: 216748877}
-  street2: {fileID: 245331367}
-  street3: {fileID: 1311930216}
-  soldier: {fileID: 3996278062239103353, guid: 26fd15ca96ff54ba59e571855a55d908, type: 3}
-  poolSize: 5
-  speedInvoke: 3
-  soldiersStreet1: []
-  soldiersStreet2: []
-  soldiersStreet3: []
-  collection: {fileID: 843639568}
-  castleEnemy: 1
+  enemyPool: {fileID: 973447743}
+  spawnPoints:
+  - {fileID: 216748878}
+  - {fileID: 245331368}
+  - {fileID: 1311930217}
+  spawnInterval: 5
+--- !u!114 &973447743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973447740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f869ae62bc03849ea8961a8948a953ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 3996278062239103353, guid: 26fd15ca96ff54ba59e571855a55d908, type: 3}
+  poolSize: 10
 --- !u!1 &976455043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,16 +1436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd228d39b7cf4791b524de02c6af0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1077928529}
-  ballPool: {fileID: 807813171}
-  castleController: {fileID: 1954768764}
-  SpawnBall: {fileID: 1945182273}
-  rotationSpeed: 10
-  rayLength: 10
-  targetTag: Soldier
-  cooldownTime: 3
-  baseShootForce: 10
-  forceMultiplier: 1.5
 --- !u!1 &1062352084
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,6 +2024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1954768763}
+  - component: {fileID: 1954768765}
   - component: {fileID: 1954768764}
   m_Layer: 0
   m_Name: Castle1
@@ -2067,20 +2064,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1954768762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a26dd975410714c4f89d9c274378030b, type: 3}
+  m_Script: {fileID: 11500000, guid: 37f0fe5443e9d4d769d3b444333a5793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  street1: {fileID: 101888350}
-  street2: {fileID: 1162620067}
-  street3: {fileID: 1062352084}
-  soldier: {fileID: 3996278062239103353, guid: fb426530b07c540a1adc2ffc6b3accb5, type: 3}
-  poolSize: 5
-  speedInvoke: 3
-  soldiersStreet1: []
-  soldiersStreet2: []
-  soldiersStreet3: []
-  collection: {fileID: 1579453713}
-  castleEnemy: 0
+  soldierPrefab: {fileID: 3996278062239103353, guid: fb426530b07c540a1adc2ffc6b3accb5, type: 3}
+  poolSize: 10
+--- !u!114 &1954768765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954768762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bec8adacd2544dd7a7ceed41f2f897d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldierPool: {fileID: 1954768764}
+  spawnPoints:
+  - {fileID: 101888351}
+  - {fileID: 1162620068}
+  - {fileID: 1062352085}
+  spawnInterval: 5
 --- !u!1 &2016049311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,16 +2329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6048bb06ea7874b6c9cea4c6af4c9d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  ballPool: {fileID: 807813171}
-  castleController: {fileID: 973447742}
-  SpawnBall: {fileID: 95880198}
-  rotationSpeed: 10
-  rayLength: 10
-  targetTag: EnemySoldier
-  cooldownTime: 3
-  baseShootForce: 15
-  forceMultiplier: 1.5
 --- !u!114 &2128241284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2345,13 +2341,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd228d39b7cf4791b524de02c6af0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  ballPool: {fileID: 807813171}
-  castleController: {fileID: 1954768764}
-  SpawnBall: {fileID: 95880198}
-  rotationSpeed: 1
-  rayLength: 10
-  targetTag: EnemySoldier
-  cooldownTime: 3
-  baseShootForce: 15
-  forceMultiplier: 1.5

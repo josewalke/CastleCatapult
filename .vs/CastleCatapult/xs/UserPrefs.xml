@@ -1,15 +1,14 @@
 ﻿<Properties StartupConfiguration="{C5029596-FB52-A8D6-8B9B-D6AE9134E299}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/SoldierController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/HealthSystem.cs">
     <Files>
-      <File FileName="Assets/Script/CanonController.cs" Line="176" Column="1" />
-      <File FileName="Assets/Script/CastleController.cs" Line="190" Column="1" />
-      <File FileName="Assets/Script/PoolingManager.cs" Line="54" Column="1" />
-      <File FileName="Assets/Script/Ball.cs" Line="63" Column="1" />
-      <File FileName="Assets/Script/CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/CanonEnemyController.cs" Line="22" Column="17" />
-      <File FileName="Assets/Script/LookAtCamera.cs" Line="18" Column="84" />
-      <File FileName="Assets/Script/EnemySoldierController.cs" Line="102" Column="28" />
-      <File FileName="Assets/Script/SoldierController.cs" Line="103" Column="29" />
+      <File FileName="Assets/Script/SoldierController.cs" Line="10" Column="73" />
+      <File FileName="Assets/Script/ManagerController.cs" Line="39" Column="46" />
+      <File FileName="Assets/Script/SoldierManager.cs" Line="26" Column="85" />
+      <File FileName="Assets/Script/SoldierPool.cs" Line="44" Column="1" />
+      <File FileName="Assets/Script/EnemyController.cs" Line="17" Column="26" />
+      <File FileName="Assets/Script/EnemyPool.cs" Line="44" Column="1" />
+      <File FileName="Assets/Script/EnemyManager.cs" Line="40" Column="1" />
+      <File FileName="Assets/Script/HealthSystem.cs" Line="32" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +16,7 @@
           <Node name="CastleCatapult" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Script" expanded="True">
-                <Node name="SoldierController.cs" selected="True" />
+                <Node name="HealthSystem.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -27,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="52061211-f037-42b8-85e4-dce9fe903c03" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="14521ec4-78f6-44ec-a883-8fa9fdee036f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

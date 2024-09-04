@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{FDE3ACA1-3297-AA73-AE59-832B7BB6CAF4}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/SoldierController.cs">
+    <Files>
+      <File FileName="Assets/Script/ManagerController.cs" Line="90" Column="1" />
+      <File FileName="Assets/Script/SoldierPool.cs" Line="46" Column="1" />
+      <File FileName="Assets/Script/SoldierManager.cs" Line="48" Column="1" />
+      <File FileName="Assets/Script/SoldierController.cs" Line="8" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Assembly-CSharp.Player" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Script" expanded="True">
+                <Node name="SoldierController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp.Player PreferredExecutionTarget="52061211-f037-42b8-85e4-dce9fe903c03" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
