@@ -3,41 +3,40 @@ using UnityEngine;
 
 public class SoldierPool : MonoBehaviour
 {
-    [SerializeField] private GameObject soldierPrefab;
-    [SerializeField] private int poolSize = 10;
+    // Prefab del soldado que se instanciará si el pool está vacío
+    [SerializeField] private SoldierController soldierPrefab;
 
-    private Queue<GameObject> pool = new Queue<GameObject>();
+    // Cola que almacena los soldados disponibles en el pool
+    private Queue<SoldierController> soldierPool = new Queue<SoldierController>();
 
-    private void Start()
+    // Contador para numerar los soldados instanciados
+    private int num;
+
+    // Método para obtener un soldado del pool
+    public SoldierController GetSoldier()
     {
-        // Inicializa el pool de soldados
-        for (int i = 0; i < poolSize; i++)
+        // Si el pool tiene soldados disponibles, los sacamos de la cola
+        if (soldierPool.Count > 0)
         {
-            GameObject soldier = Instantiate(soldierPrefab);
-            soldier.SetActive(false);
-            pool.Enqueue(soldier);
-        }
-    }
-
-    public GameObject GetSoldierFromPool()
-    {
-        if (pool.Count > 0)
-        {
-            GameObject soldier = pool.Dequeue();
-            soldier.SetActive(true);
-            return soldier;
+            SoldierController soldier = soldierPool.Dequeue();  // Obtiene un soldado de la cola
+            soldier.gameObject.SetActive(true);                // Activa el objeto del soldado
+            return soldier;                                    // Devuelve el soldado listo para usarse
         }
         else
         {
-            // Opcional: Expande el pool si es necesario
-            GameObject soldier = Instantiate(soldierPrefab);
-            return soldier;
+            // Si el pool está vacío, instanciamos un nuevo soldado
+            num++;
+            SoldierController newSoldier = Instantiate(soldierPrefab);  // Instancia un nuevo soldado a partir del prefab
+            newSoldier.Initialize(this);                                // Asocia el pool al nuevo soldado
+            newSoldier.name = "Soldier " + num;                         // Asigna un nombre único al soldado
+            return newSoldier;                                          // Devuelve el nuevo soldado instanciado
         }
     }
 
-    public void ReturnSoldierToPool(SoldierController soldier)
+    // Método para devolver un soldado al pool
+    public void ReturnToPool(SoldierController soldier)
     {
-        soldier.gameObject.SetActive(false);
-        pool.Enqueue(soldier.gameObject);
+        soldier.gameObject.SetActive(false);  // Desactiva el soldado (ya no está en uso)
+        soldierPool.Enqueue(soldier);         // Añade el soldado a la cola del pool, para reutilizarlo en el futuro
     }
 }

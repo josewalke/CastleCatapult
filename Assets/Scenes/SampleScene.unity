@@ -1387,8 +1387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f869ae62bc03849ea8961a8948a953ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3996278062239103353, guid: 26fd15ca96ff54ba59e571855a55d908, type: 3}
-  poolSize: 10
+  enemyPrefab: {fileID: 4706419562265474943, guid: 26fd15ca96ff54ba59e571855a55d908, type: 3}
 --- !u!1 &976455043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,8 +2066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f0fe5443e9d4d769d3b444333a5793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierPrefab: {fileID: 3996278062239103353, guid: fb426530b07c540a1adc2ffc6b3accb5, type: 3}
-  poolSize: 10
+  soldierPrefab: {fileID: 5838855354011866550, guid: fb426530b07c540a1adc2ffc6b3accb5, type: 3}
 --- !u!114 &1954768765
 MonoBehaviour:
   m_ObjectHideFlags: 0
